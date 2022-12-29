@@ -1,0 +1,28 @@
+const express = require("express")
+const router = express.Router()
+
+const { insertData, getData, updateData, deleteData, sendMail, insertMultipleData, findSecondHighestPrice, insertMultipleDataInEmployee, findHighestSalaryOfEmoloyee, totalSalary, averageSalary, betweenTwoDateSalary, insertMultipleDataInStudents, findAllStudentsBetweenDates, findAreaWiseStudent, insertManyInstallment, viewInstallment, findRemainningFees, collectionOfStudentFees, totalCollectionOfStudentFees, viewAllInstallment } = require("../Controller/insertController")
+
+router.post('/', insertData)
+router.post('/mail', sendMail)
+router.get('/', getData)
+router.put('/', updateData)
+router.delete('/', deleteData)
+router.post('/insert', insertMultipleData)
+router.get('/second', findSecondHighestPrice)
+router.post('/employee', insertMultipleDataInEmployee)
+router.get('/highest', findHighestSalaryOfEmoloyee)
+router.get('/total', totalSalary)
+router.get('/average', averageSalary)
+router.get('/between', betweenTwoDateSalary)
+router.post('/student', insertMultipleDataInStudents)
+router.get('/empbet', findAllStudentsBetweenDates)
+router.get('/area', findAreaWiseStudent)
+router.post('/insertinstall', insertManyInstallment)
+router.get('/installment', viewInstallment)
+router.get("/fees", findRemainningFees)
+router.get('/collection', collectionOfStudentFees)
+router.get('/totalcollection', totalCollectionOfStudentFees)
+router.get('/viewallIn', viewAllInstallment)
+
+module.exports = router
