@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 
 const { insertData, getData, updateData, deleteData, sendMail, insertMultipleData, findSecondHighestPrice, insertMultipleDataInEmployee, findHighestSalaryOfEmoloyee, totalSalary, averageSalary, betweenTwoDateSalary, insertMultipleDataInStudents, findAllStudentsBetweenDates, findAreaWiseStudent, insertManyInstallment, viewInstallment, findRemainningFees, collectionOfStudentFees, totalCollectionOfStudentFees, viewAllInstallment } = require("../Controller/insertController")
+const { insertInUsers, viewInUser } = require("../Controller/mlmcontroller")
 
 router.post('/', insertData)
 router.post('/mail', sendMail)
@@ -24,5 +25,7 @@ router.get("/fees", findRemainningFees)
 router.get('/collection', collectionOfStudentFees)
 router.get('/totalcollection', totalCollectionOfStudentFees)
 router.get('/viewallIn', viewAllInstallment)
+router.post('/user', insertInUsers)
+router.get('/user', viewInUser)
 
 module.exports = router
